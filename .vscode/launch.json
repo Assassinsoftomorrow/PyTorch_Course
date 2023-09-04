@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Kushagra/Desktop/PyTorch Course",
-      "program": "c:/Users/Kushagra/Desktop/PyTorch Course/build/Debug/outDebug",
+      "cwd": "c:/Users/Kushagra/Desktop/PyTorch_Course",
+      "program": "c:/Users/Kushagra/Desktop/PyTorch_Course/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
