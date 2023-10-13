@@ -36,7 +36,7 @@ train_dataloader, test_dataloader, class_names = data_setup.create_dataloaders(
 )
 
 # Create model with help from model_builder.py
-model_0 = model_builder.TinyVGG(
+model = model_builder.TinyVGG(
     input_shape=3,
     hidden_units=HIDDEN_UNITS,
     output_shape=len(class_names)
@@ -44,11 +44,11 @@ model_0 = model_builder.TinyVGG(
 
 # Set loss and optimizer
 loss_fn = torch.nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model_0.parameters(),
+optimizer = torch.optim.Adam(model.parameters(),
                              lr=LEARNING_RATE)
 
 # Start training with help from engine.py
-engine.train(model=model_0,
+engine.train(model=model,
              train_dataloader=train_dataloader,
              test_dataloader=test_dataloader,
              loss_fn=loss_fn,
@@ -57,6 +57,6 @@ engine.train(model=model_0,
              device=device)
 
 # Save the model with help from utils.py
-utils.save_model(model=model_0,
+utils.save_model(model=model,
                  target_dir="models",
                  model_name="05_going_modular_script_mode_tinyvgg_model.pth")
